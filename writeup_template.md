@@ -33,16 +33,22 @@ The goals / steps of this project are the following:
 
 #### Data Set Summary & Exploration
 
-#### 1. Provide a basic summary of the data set.
+#### 1. Basic summary of the data set.
 
 I used the pandas and numpy libraries to calculate summary statistics of the traffic signs data set:
 
-Number of training examples = 34799
-Number of validation examples = 4410
-Number of testing examples = 12630
-Image data shape = (34799, 32, 32, 3)
-Label data shape = (34799,)
-Number of classes = 43
+* Number of training examples = 34799
+
+* Number of validation examples = 4410
+
+* Number of testing examples = 12630
+
+* Image data shape = (34799, 32, 32, 3)
+
+* Label data shape = (34799,)
+
+* Number of classes = 43
+
 
 | Top 5 Signs: 			|SignCount|  	  fraction of training set 		| 
 |:---------------------:|:------- |-------------------------------------:| 
@@ -54,7 +60,7 @@ Number of classes = 43
 
 
 
-#### 2. Include an exploratory visualization of the dataset.
+#### 2. Eexploratory visualization of the dataset:
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the unique data classes are distributed.
 
@@ -66,7 +72,7 @@ here is a visualizarion of the augmented data set:
 
 ### Design and Test a Model Architecture
 
-#### 1. Describe how you preprocessed the image data. 
+#### 1. Image preprocessing: 
 
 Before preprocessing the dataset, I generated additional data for the unbalanced classes in the dataset. In the previous section you can appreciate the before and after distributions of the image classes. The data agumentation in my project was inspired by posts from the web (medium and forums) and it seemed as a very straightforward way to work with the already available data.
 
@@ -82,18 +88,17 @@ For the preprocessing of the augmented dataset:
 As a first step, I decided to convert the images to grayscale because the 3 color channels may cause learning difficulties for the model and add complexity. Then I applied the equalizeHist function from cv2 library to make the images more bright. At last, I normalized the images.
 
 
-Here is an example of a traffic sign image before and after grayscaling and after histogram equalizing:
+Example of a traffic sign image before and after grayscaling and after histogram equalizing:
 
 ![alt text][image3]
 
 
-Here is an example of an original image and an augmented image:
+Example of an original image and an augmented image:
 
 ![alt text][image4]
 
 
-
-#### 2. My final model consisted of the following layers:
+#### 2. Final model layers:
 
 
 | Layer         		|     Description	        					| 
@@ -141,22 +146,25 @@ Here is an example of an original image and an augmented image:
 * test set accuracy of 0.9409
 
 * What was the first architecture that was tried and why was it chosen?
+
   The First arch that I tried consisted of: 2 conv2D, 2 maxpool, and then 3 fully connected layers because that worked
   another nanodegree project I made in the past.
   
 * What were some problems with the initial architecture?
+
   The accuracy requisite was not met, not even closely.
   
 * How was the architecture adjusted and why was it adjusted? 
+  
   I adjusted the arch by adding more conv2D layers and then adding some dropout layers to avoid overfitting.
 
 * Which parameters were tuned? How were they adjusted and why?
-  The keep prob parameter first was set to 0.60 but that value was too low.
-  Then I tuned the learning rate
+  
+  The keep prob parameter first was set to 0.60 but that value was too low, then I tuned the learning rate
  
-### Test a Model on New Images
+### Test a Model on new images
 
-#### 1. Here are nine German traffic signs that I found on the web:
+#### 1. Here are nine german traffic signs that I found on the web:
 
 
 ![alt text][image5]
@@ -165,8 +173,8 @@ Here is an example of an original image and an augmented image:
 
 Some of the images are quite standard and other can be a challenge for the network to classify. 
 
-#### 2.Here are the results of the prediction
-##### 8 out of 9 images were correctly classified!
+#### 2.Results of the prediction:
+#### 8 out of 9 images were correctly classified!
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
