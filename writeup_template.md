@@ -179,7 +179,7 @@ Here are the results of the prediction:
 
 ![alt text][image6]
 
-The model was able to correctly guess 8 of the 9 traffic signs, which gives an accuracy of 88%. This compares favorably to the accuracy on the test set of 0.94.
+The model was able to correctly guess 8 of the 9 traffic signs, which gives an accuracy of 88%. This compared to the accuracy on the test set of 0.94 is expected. As Some of the images from the web may be difficult to classify because the 'No entry' sign picture is taken from a very unusual angle. The 'Ahead only' may also be a tricky one because the image was edited to fit the ratio of the rest of the images. 
 
 #### 3. Top 5 softmax probabilities for each image along with the sign type of each probability. 
 
