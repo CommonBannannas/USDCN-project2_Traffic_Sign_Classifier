@@ -77,23 +77,23 @@ here is a visualizarion of the augmented data set:
 Before preprocessing the dataset, I generated additional data for the unbalanced classes in the dataset. In the previous section you can appreciate the before and after distributions of the image classes. The data agumentation in my project was inspired by posts from the web (medium and forums) and it seemed as a very straightforward way to work with the already available data.
 
 The data augmentation works this way:
-1)With the function create variant, create a variation of the input image by randomly shifting or tilting it.
+1) With the function create variant, create a variation of the input image by randomly shifting or tilting it.
 
-2)I Established a desired number of  observations per class and calculated the augmentation multiplier by dividing the desired number of observations between the actual number of observations per class.
+2) I Established a desired number of  observations per class and calculated the augmentation multiplier by dividing the desired number of observations between the actual number of observations per class.
 
-3)Augment the data randomly  times the multiplier.
+3) Augment the data randomly x times the multiplier.
 
-For the preprocessing of the augmented dataset:
+* For the preprocessing of the augmented dataset:
+  
+  As a first step, I decided to convert the images to grayscale because the 3 color channels may cause learning difficulties for the model and add complexity. Then I applied the equalizeHist function from cv2 library to make the images more bright. At last, I normalized the images.
 
-As a first step, I decided to convert the images to grayscale because the 3 color channels may cause learning difficulties for the model and add complexity. Then I applied the equalizeHist function from cv2 library to make the images more bright. At last, I normalized the images.
 
-
-Example of a traffic sign image before and after grayscaling and after histogram equalizing:
+* Example of a traffic sign image before and after grayscaling and after histogram equalizing:
 
 ![alt text][image3]
 
 
-Example of an original image and an augmented image:
+* Example of an original image and an augmented image:
 
 ![alt text][image4]
 
@@ -136,7 +136,7 @@ Example of an original image and an augmented image:
 
 * Learning Rate = 0.00003
 
-#### 4. inal model results:
+#### 4. Final model results:
 
 
 * training set accuracy of 0.9932
@@ -148,8 +148,8 @@ Example of an original image and an augmented image:
 * What was the first architecture that was tried and why was it chosen?
 
   The First arch that I tried consisted of: 2 conv2D, 2 maxpool, and then 3 fully connected layers because that worked
-  another nanodegree project I made in the past.
-  
+  another nanodegree project I made in the past. Then I read various posts from Medium and the Udacity forums and the original paper.
+ 
 * What were some problems with the initial architecture?
 
   The accuracy requisite was not met, not even closely.
