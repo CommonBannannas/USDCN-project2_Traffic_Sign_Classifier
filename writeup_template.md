@@ -33,7 +33,7 @@ The goals / steps of this project are the following:
 
 #### Data Set Summary & Exploration
 
-####1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
+#### 1. Provide a basic summary of the data set.
 
 I used the pandas and numpy libraries to calculate summary statistics of the traffic signs data set:
 
@@ -44,13 +44,13 @@ Image data shape = (34799, 32, 32, 3)
 Label data shape = (34799,)
 Number of classes = 43
 
-| Top 5 Signs: 		|SignCount  	  fraction of training set 		| 
-|:---------------------:|:---------------------------------------------:| 
-| Speed limit (50km/h) 	|	2010 	0.057760							| 
-| Speed limit (30km/h) 	|	1980 	0.056898							|
-|	 Yield				|	1920 	0.055174							|
-| Priority road 		|	1890 	0.054312							|
-| Keep right 	 	 	|	1860 	0.053450							|
+| Top 5 Signs: 			|SignCount|  	  fraction of training set 		| 
+|:---------------------:|:------- |-------------------------------------:| 
+| Speed limit (50km/h) 	|	2010  |	0.057760							| 
+| Speed limit (30km/h) 	|	1980  |	0.056898							|
+|	 Yield				|	1920  |	0.055174							|
+| Priority road 		|	1890  |	0.054312							|
+| Keep right 	 	 	|	1860  |	0.053450							|
 
 
 
