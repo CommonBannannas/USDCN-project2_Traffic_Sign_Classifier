@@ -1,0 +1,2 @@
+model_checkpoint_path: "conv_network"
+all_model_checkpoint_paths: "conv_network"
