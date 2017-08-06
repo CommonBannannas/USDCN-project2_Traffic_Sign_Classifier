@@ -66,18 +66,21 @@ here is a visualizarion of the augmented data set:
 
 ### Design and Test a Model Architecture
 
-#### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+#### 1. Describe how you preprocessed the image data. 
 
 Before preprocessing the dataset, I generated additional data for the unbalanced classes in the dataset. In the previous section you can appreciate the before and after distributions of the image classes. The data agumentation in my project was inspired by posts from the web (medium and forums) and it seemed as a very straightforward way to work with the already available data.
 
 The data augmentation works this way:
 1)With the function create variant, create a variation of the input image by randomly shifting or tilting it.
+
 2)I Established a desired number of  observations per class and calculated the augmentation multiplier by dividing the desired number of observations between the actual number of observations per class.
+
 3)Augment the data randomly  times the multiplier.
 
 For the preprocessing of the augmented dataset:
 
 As a first step, I decided to convert the images to grayscale because the 3 color channels may cause learning difficulties for the model and add complexity. Then I applied the equalizeHist function from cv2 library to make the images more bright. At last, I normalized the images.
+
 
 Here is an example of a traffic sign image before and after grayscaling and after histogram equalizing:
 
@@ -90,9 +93,8 @@ Here is an example of an original image and an augmented image:
 
 
 
-#### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### 2. My final model consisted of the following layers:
 
-My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -118,19 +120,24 @@ My final model consisted of the following layers:
 | Fully connected  (out)|size = 43 classes, Linear						|
 
 
-#### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+#### 3. To train the model, I used the following hyperparameters:
 
-To train the model, I used the following hyperparameters:
-Optimizer = Adam
-Batch size = 512
-Epochs = 15
-Learning Rate = 0.00003
 
-#### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+* Optimizer = Adam
 
-My final model results were:
+* Batch size = 512
+
+* Epochs = 15
+
+* Learning Rate = 0.00003
+
+#### 4. inal model results:
+
+
 * training set accuracy of 0.9932
+
 * validation set accuracy of 0.9707
+
 * test set accuracy of 0.9409
 
 * What was the first architecture that was tried and why was it chosen?
@@ -149,9 +156,8 @@ My final model results were:
  
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Here are nine German traffic signs that I found on the web:
 
-Here are nine German traffic signs that I found on the web:
 
 ![alt text][image5]
 
@@ -159,11 +165,8 @@ Here are nine German traffic signs that I found on the web:
 
 Some of the images are quite standard and other can be a challenge for the network to classify. 
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
-
-Here are the results of the prediction:
-
-8 out of 9 images were correctly classified!
+#### 2.Here are the results of the prediction
+##### 8 out of 9 images were correctly classified!
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
